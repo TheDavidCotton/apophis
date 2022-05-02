@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/api', function (Request $request) {
+Route::get('/apophis', function (Request $request) {
     return "You are going to die";
 });
