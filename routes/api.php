@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/apophis', function (Request $request) {
+    //header('Content-Type: application/json');
+
+    $blurbArray = [];
+
+    $flyby = Carbon::createFromFormat('YYYY-MM-DD', env('ENCOUNTER'))->format('Y-m-d');
+    $date = Carbon::now()->diffInDays($flyby, false);
+
     return response()
-            ->json(['blurb' => 'You are going to die', 'date' => env('ENCOUNTER')]);
+            ->json(['blurb' => 'You are going to die', 'date' => $date]);
 
 });
