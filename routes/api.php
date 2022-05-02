@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/apophis', function (Request $request) {
-    header('Content-Type: application/json');
-    return "You are going to die";
+    return response()
+            ->json(['blurb' => 'You are going to die', 'date' => env('ENCOUNTER')])
+
 });
