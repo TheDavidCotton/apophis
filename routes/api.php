@@ -39,7 +39,7 @@ Route::get('/apophis', function (Request $request) {
     $k = array_rand($diffArray);
     $diff = $diffArray[$k];
 
-    return $date;
+    return $diff;
     //return response()
             //->json(['blurb' => $blurb, 'date' => $date]);
 
