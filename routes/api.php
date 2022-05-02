@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/apophis', function (Request $request) {
     return response()
-            ->json(['blurb' => 'You are going to die', 'date' => env('ENCOUNTER')])
+            ->json(['blurb' => 'You are going to die', 'date' => env('ENCOUNTER')]);
 
 });
