@@ -23,16 +23,16 @@ Route::get('/apophis', function (Request $request) {
     $diffArray = array();
 
     $date_diff = Carbon::now()->diffInDays($flyby, false);
-    array_push($diff, $date_diff . 'days');
+    array_push($diffArray, $date_diff . 'days');
 
     $hours_diff = Carbon::now()->diffInHours($flyby, false);
-    array_push($diff, $hours_diff  . 'hours');
+    array_push($diffArray, $hours_diff  . 'hours');
 
     $Minutesdiff = Carbon::now()->diffInMinutes($flyby, false);
-    array_push($diff, $Minutesdiff  . 'minutes');
+    array_push($diffArray, $Minutesdiff  . 'minutes');
 
     $seconddiff = Carbon::now()->DiffInSeconds($flyby, false);
-    array_push($diff, $seconddiff  . 'seconds');
+    array_push($diffArray, $seconddiff  . 'seconds');
 
     $k = array_rand($diffArray);
     $diff = $diffArray[$k];
