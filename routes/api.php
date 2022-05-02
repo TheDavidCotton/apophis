@@ -19,8 +19,8 @@ Route::get('/apophis', function (Request $request) {
     //header('Content-Type: application/json');
 
     $flyby = Carbon::createFromFormat('Y-m-d', env('ENCOUNTER'));
-
-    return $flyby;
+    $date = Carbon::now()->diffInDays($flyby, false);
+    return $date;
     //return response()
             //->json(['blurb' => $blurb, 'date' => $date]);
 
