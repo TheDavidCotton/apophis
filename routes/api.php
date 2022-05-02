@@ -48,8 +48,7 @@ Route::get('/apophis', function (Request $request) {
     $l = array_rand($blurbArray);
     $blurb = $blurbArray[$l];
 
-    return $blurb;
-    //return response()
-            //->json(['blurb' => $blurb, 'date' => $date]);
+    return response()
+            ->json(['blurb' => $blurb, 'date' => $diff]);
 
 });
