@@ -18,12 +18,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/apophis', function (Request $request) {
     //header('Content-Type: application/json');
 
-    $blurbArray = [];
+    $blurbArray = [
+        'You are going to die in'
+    ];
+    $k = array_rand($blurbArray);
+    $blurb = $blurbArray[$k];
 
     $flyby = Carbon::createFromFormat('YYYY-MM-DD', env('ENCOUNTER'))->format('Y-m-d');
     $date = Carbon::now()->diffInDays($flyby, false);
 
-    return response()
-            ->json(['blurb' => 'You are going to die', 'date' => $date]);
+    return $date;
+    //return response()
+            //->json(['blurb' => $blurb, 'date' => $date]);
 
 });
