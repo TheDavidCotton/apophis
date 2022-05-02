@@ -39,7 +39,16 @@ Route::get('/apophis', function (Request $request) {
     $k = array_rand($diffArray);
     $diff = $diffArray[$k];
 
-    return $diff;
+    // Create array of random end of world quotes, select random string
+    $blurbArray = array(
+        'If a zombie apocalypse were to happen in Vegas would it stay in Vegas? We will find out in ',
+        'You might die in '
+    );
+
+    $l = array_rand($blurbArray);
+    $blurb = $blurbArray[$l];
+
+    return $blurb;
     //return response()
             //->json(['blurb' => $blurb, 'date' => $date]);
 
