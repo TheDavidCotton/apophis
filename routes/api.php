@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/apophis', function (Request $request) {
     //header('Content-Type: application/json');
 
-    $flyby = Carbon::createFromFormat('m/d/Y', env('ENCOUNTER'))->format('Y-m-d');
+    $flyby = Carbon::createFromFormat('Y-m-d', env('ENCOUNTER'));
 
     return $flyby;
     //return response()
